@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2021_12_12_151038) do
 
-  create_table "articles", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
     t.integer "status"
     t.datetime "published_at", precision: 6
     t.string "content"
